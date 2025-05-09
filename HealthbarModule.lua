@@ -1,5 +1,5 @@
 -- HealthBarModule.lua
-
+local hb = {}
 local player = game.Players.LocalPlayer
 local camera = workspace.CurrentCamera
 local RunService = game:GetService("RunService")
@@ -97,7 +97,7 @@ local function clearBars()
 	healthBars = {}
 end
 
-return function()
+function hb.start()
 	clearBars()
 	for _, model in pairs(workspace:GetDescendants()) do
 		local hum = model:FindFirstChildOfClass("Humanoid")
@@ -113,3 +113,4 @@ return function()
 	end)
 	
 end
+return hb
